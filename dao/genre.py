@@ -1,4 +1,4 @@
-from dao.model.genre import Genre
+from model.genre import Genre
 
 class GenreDAO:
     def __init__(self, session):

@@ -28,7 +28,7 @@ class MoviesView(Resource):
         movie = movie_service.create(request_json)
         return "", 201
 
-@movie_ns.route("/<int: uid>")
+@movie_ns.route("/<int:uid>")
 class MovieView(Resource):
     def get(self, uid):
         note = movie_service.get_one(uid)
