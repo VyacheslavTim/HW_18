@@ -6,6 +6,7 @@ from implemented import movie_service
 
 movie_ns = Namespace("movies")
 
+
 @movie_ns.route("/")
 class MoviesView(Resource):
     def get(self):
@@ -27,6 +28,7 @@ class MoviesView(Resource):
         request_json = request.json
         movie = movie_service.create(request_json)
         return "", 201
+
 
 @movie_ns.route("/<int:uid>")
 class MovieView(Resource):

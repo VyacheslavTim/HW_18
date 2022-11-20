@@ -1,4 +1,5 @@
-from model.movie import Movie
+from dao.model.movie import Movie
+
 
 class MovieDAO:
     def __init__(self, session):
@@ -27,7 +28,9 @@ class MovieDAO:
 
     def update(self, movie_d):
         m_keys = Movie(**movie_d)
-        self.session.get_one(movie_d.get(m_keys))
+        movie = self.get_one(movie_d.get(m_keys))
+
+        self.session.add(movie)
         self.session.commit()
         return m_keys
 
@@ -35,8 +38,3 @@ class MovieDAO:
         movie = self.get_one(uid)
         self.session.delete(movie)
         self.session.commit()
-
-
-
-
-

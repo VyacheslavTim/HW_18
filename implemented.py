@@ -15,4 +15,3 @@ movie_dao = MovieDAO(session=db.session)
 director_service = DirectorService(dao=director_dao)
 genre_service = GenreService(dao=genre_dao)
 movie_service = MovieService(dao=movie_dao)
-

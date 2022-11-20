@@ -1,11 +1,12 @@
 from dao.movie import MovieDAO
 
+
 class MovieService:
     def __init__(self, dao: MovieDAO):
         self.dao = dao
 
     def get_one(self, uid):
-        return self.get_one(uid)
+        return self.dao.get_one(uid)
 
     def get_all(self, filters):
         if filters.get("director_id") is not None:
@@ -29,4 +30,3 @@ class MovieService:
     def delete(self, uid):
         deleted_movies = self.dao.delete(uid)
         return deleted_movies
-
